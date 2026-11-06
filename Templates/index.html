@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des notes</title>
+</head>
+<body>
+    <h1>Calcul de moyenne</h1>
+    <form method="POST" action="/">
+        <label for="grades">Notes (séparées par des virgules) :</label>
+        <input type="text" id="grades" name="grades" placeholder="12,15,18">
+        <button type="submit" id="calculate-btn">Calculer</button>
+    </form>
+
+    {% if result %}
+        <div id="result">
+            <p id="average">Moyenne : {{ result.average }}</p>
+            <p id="mention">Mention : {{ result.mention }}</p>
+            <p id="admitted">Admis : {{ result.admitted }}</p>
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <p id="error" style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
